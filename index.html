@@ -164,6 +164,17 @@ svg{display:block;}
   box-shadow:0 20px 40px -22px rgba(91,141,239,0.35);
 }
 
+.btn-sheen::before{
+  content:'';
+  position:absolute;
+  top:0;left:-60%;
+  width:50%;height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform:skewX(-20deg);
+  transition:left 0.6s ease;
+}
+.btn-sheen:hover::before{left:130%;}
+
 .btn-card{width:100%;justify-content:center;margin-top:1.5rem;}
 
 .hero{
@@ -482,16 +493,26 @@ svg{display:block;}
   margin-bottom:1.9rem;
 }
 .social-btn{
-  width:42px;height:42px;
-  display:flex;align-items:center;justify-content:center;
-  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.75rem 1.4rem;
+  border-radius:11px;
   border:1px solid var(--border-strong);
   background:var(--surface);
-  color:var(--ink-soft);
-  transition:transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  color:var(--ink);
+  font-weight:600;
+  font-size:0.88rem;
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
-.social-btn svg{width:18px;height:18px;}
-.social-btn:hover{transform:translateY(-3px);border-color:var(--amber);color:var(--amber);}
+.social-btn svg{width:17px;height:17px;flex-shrink:0;}
+.social-btn:hover{
+  transform:translateY(-2px);
+  border-color:var(--blue);
+  box-shadow:0 20px 40px -22px rgba(91,141,239,0.35);
+}
 
 .footer-text{color:var(--ink-faint);font-size:0.84rem;margin-top:0.35rem;}
 
@@ -549,8 +570,8 @@ svg{display:block;}
     <h1 class="display">Aprende, repara y <span class="accent">crece</span><br>con la tecnología</h1>
     <p>Clases prácticas de bases de datos y manejo de software, reparación de errores en tus programas, y creación de tu propio sitio web a medida.</p>
     <div class="hero-actions">
-      <a href="index2.html" class="btn btn-primary">Ver servicios <svg><use href="#i-arrow"/></svg></a>
-      <a href="https://wa.me/593992353948?text=¡Hola!%20Vi%20tu%20web%20ByteNex%20Solutions%20y%20quiero%20más%20info" class="btn btn-ghost" target="_blank"><svg><use href="#i-chat"/></svg> Escribir por WhatsApp</a>
+      <a href="index2.html" class="btn btn-primary btn-sheen">Ver servicios <svg><use href="#i-arrow"/></svg></a>
+      <a href="https://wa.me/593992353948?text=¡Hola!%20Vi%20tu%20web%20ByteNex%20Solutions%20y%20quiero%20más%20info" class="btn btn-ghost btn-sheen" target="_blank"><svg><use href="#i-chat"/></svg> Escribir por WhatsApp</a>
     </div>
     <div class="hero-meta mono">
       <span><strong>+50</strong> estudiantes atendidos</span>
@@ -648,8 +669,8 @@ svg{display:block;}
 
 <footer class="footer" id="contacto">
   <div class="social-links">
-    <a href="https://bytefixstreme.github.io" class="social-btn" target="_blank" aria-label="Pagina Principal"><svg><use href="#i-globe"/></svg></a>
-    <a href="https://wa.me/593992353948?text=¡Hola!%20Vi%20tu%20web%20ByteNex%20Solutions%20y%20quiero%20más%20info" class="social-btn" target="_blank" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+    <a href="https://bytefixstreme.github.io" class="social-btn btn-sheen" target="_blank"><svg><use href="#i-globe"/></svg> Página Principal</a>
+    <a href="https://wa.me/593992353948?text=¡Hola!%20Vi%20tu%20web%20ByteNex%20Solutions%20y%20quiero%20más%20info" class="social-btn btn-sheen" target="_blank"><svg><use href="#i-wa"/></svg> WhatsApp</a>
   </div>
   <p class="footer-text">© 2026 ByteNex Solutions — Todos los derechos reservados</p>
   <p class="footer-text">Soluciones tecnológicas con calidad y confianza</p>
