@@ -163,6 +163,17 @@ svg{display:block;}
   box-shadow:0 20px 40px -22px rgba(91,141,239,0.35);
 }
 
+.btn-sheen::before{
+  content:'';
+  position:absolute;
+  top:0;left:-60%;
+  width:50%;height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform:skewX(-20deg);
+  transition:left 0.6s ease;
+}
+.btn-sheen:hover::before{left:130%;}
+
 .btn-card{width:100%;justify-content:center;margin-top:1.5rem;}
 
 .page-hero{
@@ -369,16 +380,26 @@ svg{display:block;}
   margin-bottom:1.9rem;
 }
 .social-btn{
-  width:42px;height:42px;
-  display:flex;align-items:center;justify-content:center;
-  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.75rem 1.4rem;
+  border-radius:11px;
   border:1px solid var(--border-strong);
   background:var(--surface);
-  color:var(--ink-soft);
-  transition:transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  color:var(--ink);
+  font-weight:600;
+  font-size:0.88rem;
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
-.social-btn svg{width:18px;height:18px;}
-.social-btn:hover{transform:translateY(-3px);border-color:var(--amber);color:var(--amber);}
+.social-btn svg{width:17px;height:17px;flex-shrink:0;}
+.social-btn:hover{
+  transform:translateY(-2px);
+  border-color:var(--blue);
+  box-shadow:0 20px 40px -22px rgba(91,141,239,0.35);
+}
 
 .footer-text{color:var(--ink-faint);font-size:0.84rem;margin-top:0.35rem;}
 
@@ -453,7 +474,7 @@ svg{display:block;}
         <h4>Introducción a Bases de Datos</h4>
         <p>Clase enfocada en los fundamentos de bases de datos: qué son, cómo se estructuran y cómo empezar a trabajar con ellas desde cero.</p>
         <div class="card-foot">
-          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20la%20clase%20de%20Introducción%20a%20Bases%20de%20Datos" class="btn btn-primary btn-card" target="_blank">Reservar clase <svg><use href="#i-arrow"/></svg></a>
+          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20la%20clase%20de%20Introducción%20a%20Bases%20de%20Datos" class="btn btn-primary btn-sheen btn-card" target="_blank">Reservar clase <svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
 
@@ -465,7 +486,7 @@ svg{display:block;}
         <h4>Manejo y reparación de software</h4>
         <p>Aprende a usar tus programas correctamente y a diagnosticar y arreglar los errores más comunes de software en tu propio equipo.</p>
         <div class="card-foot">
-          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20la%20clase%20de%20manejo%20y%20reparación%20de%20software" class="btn btn-primary btn-card" target="_blank">Reservar clase <svg><use href="#i-arrow"/></svg></a>
+          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20la%20clase%20de%20manejo%20y%20reparación%20de%20software" class="btn btn-primary btn-sheen btn-card" target="_blank">Reservar clase <svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
 
@@ -491,7 +512,7 @@ svg{display:block;}
           <li><svg><use href="#i-check"/></svg> Entrega lista para publicar</li>
         </ul>
         <div class="card-foot">
-          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20el%20servicio%20de%20Dominio%20Web" class="btn btn-primary btn-card" target="_blank">Solicitar mi web <svg><use href="#i-arrow"/></svg></a>
+          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20el%20servicio%20de%20Dominio%20Web" class="btn btn-primary btn-sheen btn-card" target="_blank">Solicitar mi web <svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </div>
@@ -511,7 +532,7 @@ svg{display:block;}
         <h4>Antivirus y seguridad</h4>
         <p>Instalación y configuración de antivirus premium. Protección completa contra malware y amenazas digitales.</p>
         <div class="card-foot">
-          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20el%20servicio%20de%20Antivirus%20y%20seguridad" class="btn btn-primary btn-card" target="_blank">Solicitar ahora <svg><use href="#i-arrow"/></svg></a>
+          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20el%20servicio%20de%20Antivirus%20y%20seguridad" class="btn btn-primary btn-sheen btn-card" target="_blank">Solicitar ahora <svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
 
@@ -523,7 +544,7 @@ svg{display:block;}
         <h4>Recuperación de datos</h4>
         <p>Recuperación profesional de datos de discos duros dañados, USB y tarjetas de memoria.</p>
         <div class="card-foot">
-          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20el%20servicio%20de%20Recuperación%20de%20datos" class="btn btn-primary btn-card" target="_blank">Solicitar ahora <svg><use href="#i-arrow"/></svg></a>
+          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20el%20servicio%20de%20Recuperación%20de%20datos" class="btn btn-primary btn-sheen btn-card" target="_blank">Solicitar ahora <svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
 
@@ -535,7 +556,7 @@ svg{display:block;}
         <h4>Paquete WPI</h4>
         <p>Paquete de programas para Windows: instalamos de una sola vez las aplicaciones esenciales que necesitas, listas para usar.</p>
         <div class="card-foot">
-          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20el%20servicio%20de%20Paquete%20WPI" class="btn btn-primary btn-card" target="_blank">Solicitar ahora <svg><use href="#i-arrow"/></svg></a>
+          <a href="https://wa.me/593992353948?text=¡Hola!%20Me%20interesa%20el%20servicio%20de%20Paquete%20WPI" class="btn btn-primary btn-sheen btn-card" target="_blank">Solicitar ahora <svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </div>
@@ -545,12 +566,12 @@ svg{display:block;}
 
 <footer class="footer" id="contacto">
   <div class="social-links">
-    <a href=https://bytefixstreme.github.io" class="social-btn" target="_blank" aria-label="Instagram"><svg><use href="#i-globe"/></svg></a>
-    <a href="https://wa.me/593992353948?text=¡Hola!%20Vi%20tu%20web%20ByteNex%20Solutions%20y%20quiero%20más%20info" class="social-btn" target="_blank" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+    <a href="https://bytefixstreme.github.io" class="social-btn btn-sheen" target="_blank"><svg><use href="#i-globe"/></svg> Página Principal</a>
+    <a href="https://wa.me/593992353948?text=¡Hola!%20Vi%20tu%20web%20ByteNex%20Solutions%20y%20quiero%20más%20info" class="social-btn btn-sheen" target="_blank"><svg><use href="#i-wa"/></svg> WhatsApp</a>
   </div>
   <p class="footer-text">© 2026 ByteNex Solutions — Todos los derechos reservados</p>
   <p class="footer-text">Soluciones tecnológicas con calidad y confianza</p>
-  <p class="footer-text mono">Founder CEO — L G · CEO — Hector Ponton</p>
+  <p class="footer-text mono">Founder CEO — L G · CEO — Hector P</p>
 </footer>
 
 <script>
