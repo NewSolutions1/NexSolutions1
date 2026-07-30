@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://newsolutions1.github.io/NexSolutions1//sitemap.xml
+Sitemap:https://newsolutions1.github.io/NexSolutions1.github.io//sitemap.xml
